@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/msgDetailAct_input_image_voice"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/msgDetailAct_input_btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/msgDetailAct_input_btn_emjo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="emjo"
+        app:layout_constraintEnd_toStartOf="@+id/msgDetailAct_input_btn_send"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/msgDetailAct_input_edit_input"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:hint="please input..."
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/msgDetailAct_input_btn_emjo"
+        app:layout_constraintStart_toEndOf="@+id/msgDetailAct_input_image_voice"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/msgDetailAct_input_edit_input">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="这里显示表情或者添加更多的布局"
+            android:textSize="40sp" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
