@@ -47,7 +47,7 @@ public class MessageDetailsActivity extends AppCompatActivity {
         layoutManager.setOrientation(OrientationHelper.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new MyRecyclerViewDecoration(this, OrientationHelper.VERTICAL));
+       // recyclerView.addItemDecoration(new MyRecyclerViewDecoration(this, OrientationHelper.VERTICAL));
         MsgDetailAdapter adapter = new MsgDetailAdapter(this, testNames);
         recyclerView.setAdapter(adapter);
     }

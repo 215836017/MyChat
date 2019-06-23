@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/msgDetailAct_item_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/msgDetailAct_item_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
         android:layout_margin="4dp"
-        android:text="sdfdf"
-        android:textSize="30sp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="2019.01.22 08:38"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include layout="@layout/layout_msg_detail_item_left" />
+
+    <include layout="@layout/layout_msg_detail_item_right" />
+
+    <include layout="@layout/layout_msg_detail_item_left_test" />
 </android.support.constraint.ConstraintLayout>
