@@ -14,8 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.test.mychat.R;
+import com.test.mychat.recycler.RecyclerViewHelper;
 import com.test.mychat.ui.adapters.MsgListAdapter;
-import com.test.mychat.ui.adapters.MyRecyclerViewDecoration;
+import com.test.mychat.recycler.MyRecyclerViewDecoration;
 
 public class FragChats extends Fragment {
 
@@ -41,11 +42,13 @@ public class FragChats extends Fragment {
     private void initViews() {
         String[] friends = getResources().getStringArray(R.array.friends);
         recyclerView = rootView.findViewById(R.id.fragChats_recyclerView);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-        layoutManager.setOrientation(OrientationHelper.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new MyRecyclerViewDecoration(context, OrientationHelper.VERTICAL));
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+//        layoutManager.setOrientation(OrientationHelper.VERTICAL);
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.addItemDecoration(new MyRecyclerViewDecoration(context, OrientationHelper.VERTICAL));
+
+        RecyclerViewHelper.setVerticalRecyclerViewAttrs(context, recyclerView);
         MsgListAdapter adapter = new MsgListAdapter(context, friends);
         recyclerView.setAdapter(adapter);
     }

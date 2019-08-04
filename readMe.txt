@@ -26,6 +26,10 @@
 
 1. 在Android Studio安装到模拟器中时报错： https://blog.csdn.net/qq_34707150/article/details/90483690
 2. android.view.InflateException: Binary XML file line #64: Error inflating class ImageView -- 把ImageView适配的图片从drawable-v24移动到drawable后OK
-3. 主要完成了主界面相关的部分代码。
 
 2019.06.22
+
+1. 主要完成了创建数据库代码的编写和汉语拼音的识别
+
+2019.07.30
+

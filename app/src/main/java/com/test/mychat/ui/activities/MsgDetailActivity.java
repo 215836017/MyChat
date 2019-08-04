@@ -12,9 +12,9 @@ import android.widget.TextView;
 
 import com.test.mychat.R;
 import com.test.mychat.ui.adapters.MsgDetailAdapter;
-import com.test.mychat.ui.adapters.ChatsAdapter;
+import com.test.mychat.ui.adapters.MsgListAdapter;
 
-public class MessageDetailsActivity extends AppCompatActivity {
+public class MsgDetailActivity extends AppCompatActivity {
 
     /*** 界面顶部的人物关系名称：好友名称或者群组名称 */
     private String relationName;
@@ -34,7 +34,7 @@ public class MessageDetailsActivity extends AppCompatActivity {
 
     private void initViews() {
 
-        relationName = getIntent().getStringExtra(ChatsAdapter.BUNDLE_KEY_NAME);
+        relationName = getIntent().getStringExtra(MsgListAdapter.BUNDLE_KEY_NAME);
         textRelationName = findViewById(R.id.msgDetailAct_text_relationName);
         if (!TextUtils.isEmpty(relationName)) {
             textRelationName.setText(relationName);

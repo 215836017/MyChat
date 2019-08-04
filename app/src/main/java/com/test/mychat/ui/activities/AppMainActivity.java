@@ -1,6 +1,5 @@
 package com.test.mychat.ui.activities;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -11,11 +10,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.test.mychat.R;
+import com.test.mychat.database.DatabaseManager;
+import com.test.mychat.database.sqlutil.TableContactsHelper;
+import com.test.mychat.databean.ContactsBean;
+import com.test.mychat.test.TestContacts;
 import com.test.mychat.ui.adapters.MyFragmentPagerAdapter;
 import com.test.mychat.ui.framents.FragChats;
 import com.test.mychat.ui.framents.FragConstacts;
 import com.test.mychat.ui.framents.FragDiscover;
 import com.test.mychat.ui.framents.FragMe;
+import com.test.mychat.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +28,10 @@ import java.util.List;
  * https://www.mvnjar.com/
  * <p>
  * 在组件化开发中library中如何使用butterknife -- https://www.jianshu.com/p/c6e3f67e391e
- *
- * Android组件化：https://www.cnblogs.com/ldq2016/p/9073105.html
  */
-public class MessageListActivity extends AppCompatActivity implements View.OnClickListener {
+public class AppMainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private final String TAG = "AppMainActivity.java";
 
     private ViewPager viewPager;
     private LinearLayout layoutChats, layoutConstacts, layoutDiscover, layoutMe;
@@ -44,12 +48,35 @@ public class MessageListActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_message_list);
 
+        DatabaseManager.getInstance().openDatabase(getApplicationContext());
+
+        testSql();
         initViews();
-        initDatas();
+        initFragments();
         setListeners();
+    }
+
+    @Override
+    protected void onDestroy() {
+        DatabaseManager.getInstance().closeDatabase();
+        super.onDestroy();
+    }
+
+    private void testSql() {
+        List<String> nameList = TestContacts.getNameList();
+        for (String name : nameList) {
+            TableContactsHelper.insertContacts(name, name + "_headPortraitPath" + System.currentTimeMillis());
+        }
+
+        List<ContactsBean> contactsBeans = TableContactsHelper.queryAllContactsOrderByPinying();
+        if (null != contactsBeans && contactsBeans.size() > 0) {
+
+            for (ContactsBean bean : contactsBeans) {
+                LogUtil.d(TAG, bean.toString());
+            }
+        }
     }
 
     private void initViews() {
@@ -81,7 +108,7 @@ public class MessageListActivity extends AppCompatActivity implements View.OnCli
         updateBottomView(INDEX_CHATS);
     }
 
-    private void initDatas() {
+    private void initFragments() {
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new FragChats());
         fragmentList.add(new FragConstacts());
@@ -153,6 +180,4 @@ public class MessageListActivity extends AppCompatActivity implements View.OnCli
             }
         }
     }
-
-
 }

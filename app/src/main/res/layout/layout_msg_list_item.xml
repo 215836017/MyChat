@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/fragChats_listItem_image_title"
+        android:id="@+id/fragChats_listItem_image_headPortrait"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="5dp"
@@ -24,8 +24,8 @@
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:src="@drawable/test_icon_normal"
-        app:layout_constraintEnd_toEndOf="@+id/fragChats_listItem_image_title"
-        app:layout_constraintTop_toTopOf="@+id/fragChats_listItem_image_title" />
+        app:layout_constraintEnd_toEndOf="@+id/fragChats_listItem_image_headPortrait"
+        app:layout_constraintTop_toTopOf="@+id/fragChats_listItem_image_headPortrait" />
 
     <TextView
         android:id="@+id/fragChats_listItem_text_title"
@@ -38,8 +38,8 @@
         android:text="群组名称"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/fragChats_listItem_text_time"
-        app:layout_constraintStart_toEndOf="@+id/fragChats_listItem_image_title"
-        app:layout_constraintTop_toTopOf="@+id/fragChats_listItem_image_title" />
+        app:layout_constraintStart_toEndOf="@+id/fragChats_listItem_image_headPortrait"
+        app:layout_constraintTop_toTopOf="@+id/fragChats_listItem_image_headPortrait" />
 
     <TextView
         android:id="@+id/fragChats_listItem_text_content"
@@ -51,9 +51,9 @@
         android:maxLines="1"
         android:text="xx:12345"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/fragChats_listItem_image_title"
+        app:layout_constraintBottom_toBottomOf="@+id/fragChats_listItem_image_headPortrait"
         app:layout_constraintEnd_toStartOf="@+id/fragChats_listItem_iamge_action"
-        app:layout_constraintStart_toEndOf="@+id/fragChats_listItem_image_title" />
+        app:layout_constraintStart_toEndOf="@+id/fragChats_listItem_image_headPortrait" />
 
     <TextView
         android:id="@+id/fragChats_listItem_text_time"
@@ -63,7 +63,7 @@
         android:text="2.44 PM"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fragChats_listItem_image_title" />
+        app:layout_constraintTop_toTopOf="@+id/fragChats_listItem_image_headPortrait" />
 
     <ImageView
         android:id="@+id/fragChats_listItem_iamge_action"
@@ -71,7 +71,7 @@
         android:layout_height="15dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/test_icon_selected"
-        app:layout_constraintBottom_toBottomOf="@+id/fragChats_listItem_image_title"
+        app:layout_constraintBottom_toBottomOf="@+id/fragChats_listItem_image_headPortrait"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <View
@@ -81,6 +81,6 @@
         android:background="#D522A2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/fragChats_listItem_image_title" />
+        app:layout_constraintStart_toEndOf="@+id/fragChats_listItem_image_headPortrait" />
 
 </android.support.constraint.ConstraintLayout>

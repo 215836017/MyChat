@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MyChat</string>
     <string name="actionBarName">testABar</string>
+    <string name="empty_item">empty_item</string>
 
     <string-array name="test">
         <item>天魁星…呼保义…宋江</item>

@@ -13,19 +13,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.test.mychat.R;
-import com.test.mychat.ui.activities.MsgDetailActivity;
+import com.test.mychat.ui.activities.MessageDetailsActivity;
 
-public class MsgListAdapter extends RecyclerView.Adapter<MsgListAdapter.ViewHolder> {
+public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ViewHolder> {
 
     private Context context;
     private String[] friends;
     private Intent toDetailActIntent;
     public final static String BUNDLE_KEY_NAME = "friend_name";
 
-    public MsgListAdapter(Context context, String[] friends) {
+    public ChatsAdapter(Context context, String[] friends) {
         this.context = context;
         this.friends = friends;
-        toDetailActIntent = new Intent(context, MsgDetailActivity.class);
+        toDetailActIntent = new Intent(context, MessageDetailsActivity.class);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class MsgListAdapter extends RecyclerView.Adapter<MsgListAdapter.ViewHold
 
 //        viewHolder.textTitle.setText(friends[position] + "-d-f-a-s-d-f-g-a-s=d-gaew_g-ewgwe_gfsdfsadf");
         viewHolder.textTitle.setText(friends[position] + "是的高温噶尔大富翁变为是是大V深V");
-        viewHolder.imageHeadPortrait.setImageResource(R.mipmap.ic_launcher_round);
+        viewHolder.imageTitle.setImageResource(R.mipmap.ic_launcher_round);
         if (position % 3 == 0) {
 
             viewHolder.imageMsgCount.setVisibility(View.VISIBLE);
@@ -79,7 +79,7 @@ public class MsgListAdapter extends RecyclerView.Adapter<MsgListAdapter.ViewHold
     class ViewHolder extends RecyclerView.ViewHolder {
 
         private ConstraintLayout rootLayout;
-        private ImageView imageHeadPortrait;
+        private ImageView imageTitle;
         private ImageView imageMsgCount;
         private TextView textTitle, textContent, textTime;
         private ImageView imageAction;
@@ -87,7 +87,7 @@ public class MsgListAdapter extends RecyclerView.Adapter<MsgListAdapter.ViewHold
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             rootLayout = itemView.findViewById(R.id.fragChats_listItem_layout);
-            imageHeadPortrait = itemView.findViewById(R.id.fragChats_listItem_image_headPortrait);
+            imageTitle = itemView.findViewById(R.id.fragChats_listItem_image_headPortrait);
             imageMsgCount = itemView.findViewById(R.id.fragChats_listItem_image_msgCount);
             textTitle = itemView.findViewById(R.id.fragChats_listItem_text_title);
             textContent = itemView.findViewById(R.id.fragChats_listItem_text_content);
